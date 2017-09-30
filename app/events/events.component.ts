@@ -9,7 +9,7 @@ import { EventEmitter } from '@angular/core'
   <div class="well">
     <div>Name: {{eventOb.name}}</div>
     <div>Date: {{eventOb.date}}</div>
-    <button (click)="handleClick()">Click me</button>
+    <button (click)="handleClick()">Click me child!!</button>
   </div>
   `,
   //styleUrls: ['./events.component.css'],
