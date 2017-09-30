@@ -16,6 +16,7 @@ import { EventEmitter } from '@angular/core'
 export class EventsAppComponent {
 @Input() eventOb:any;
 @Output() eventClick = new EventEmitter();
+myText = 'child comp text'
 
 handleClick() {
   console.log("clicked");

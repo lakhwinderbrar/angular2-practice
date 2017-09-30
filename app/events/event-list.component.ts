@@ -4,6 +4,7 @@ import {Component} from '@angular/core'
     selector: "event-list",
     template: `
     <button (click)="thumbnail.handleClick()">Click me(parent)</button>
+    <h3>{{thumbnail.myText}}</h3>
     <table>
         <app-events #thumbnail [eventOb] = "eventOb1" (eventClick)="handleParentClick($event)"></app-events>
     </table>
