@@ -13,7 +13,8 @@ import {Component} from '@angular/core'
 
 export class EventListComponent {
     eventOb1 = {
-        name : 'Event 1'
+        name : 'Event 1',
+        date : '11/13/1986'
     }
 
     handleParentClick(event:any) {

@@ -5,12 +5,17 @@ import { EventEmitter } from '@angular/core'
 
 @Component({
   selector: 'app-events',
-  template: `<p>
-                abcd events works! {{eventOb.name}}
-            </p>
-            <button (click)="handleClick()">Click me</button>
-            `,
-  styleUrls: ['./events.component.css']
+  template: `
+  <div class="well">
+    <div>Name: {{eventOb.name}}</div>
+    <div>Date: {{eventOb.date}}</div>
+    <button (click)="handleClick()">Click me</button>
+  </div>
+  `,
+  //styleUrls: ['./events.component.css'],
+  styles : [`
+    .well > div { color : red}
+  `]
 })
 
 export class EventsAppComponent {
