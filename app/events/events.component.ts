@@ -22,4 +22,8 @@ handleClick() {
   this.eventClick.emit("Clicked");
 }
 
+logFoo() {
+  console.log('foo')
+}
+
 }
