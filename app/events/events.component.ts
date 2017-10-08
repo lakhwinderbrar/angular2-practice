@@ -7,9 +7,10 @@ import { EventEmitter } from '@angular/core'
   selector: 'app-events',
   template: `
   <div class="well">
+    <hr/>
     <div>Name: {{eventOb.name}}</div>
-    <div>Date: {{eventOb.date}}</div>
-    <button (click)="handleClick()">Click me child!!</button>
+    <div>Date(Event): {{eventOb.date}}</div>
+    <!--<button (click)="handleClick()">Click me child!!</button>-->
   </div>
   `,
   //styleUrls: ['./events.component.css'],
