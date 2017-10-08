@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core'
 
 @Component({
-    selector: "events",
+    selector: 'events',
     template: `
     <!--<button (click)="thumbnail.handleClick()">Click me(parent)</button>-->
     <!--<h3>{{thumbnail.myText}}</h3>-->

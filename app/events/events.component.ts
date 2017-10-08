@@ -10,6 +10,7 @@ import { EventEmitter } from '@angular/core'
     <hr/>
     <div>Name: {{eventOb.name}}</div>
     <div>Date(Event): {{eventOb.date}}</div>
+    <button (click)="logFoo(eventOb)">Edit</button>
     <!--<button (click)="handleClick()">Click me child!!</button>-->
   </div>
   `,
@@ -20,17 +21,17 @@ import { EventEmitter } from '@angular/core'
 })
 
 export class EventsAppComponent {
-@Input() eventOb:any;
-@Output() eventClick = new EventEmitter();
-myText = 'child comp text'
+    @Input() eventOb:any;
+    //@Output() eventClick = new EventEmitter();
+    myText = 'child comp text'
 
-handleClick() {
-  console.log("clicked");
-  this.eventClick.emit("Clicked");
-}
+    handleClick() {
+      console.log("clicked");
+      //this.eventClick.emit("Clicked");
+    }
 
-logFoo() {
-  console.log('foo')
-}
+    logFoo() {
+      console.log('Edit Event ' + this.eventOb.name)
+    }
 
 }
