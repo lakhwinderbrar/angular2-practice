@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core'
-
+import {EventService} from './event.service'
 @Component({
     selector: 'events',
     template: `
     <!--<button (click)="thumbnail.handleClick()">Click me(parent)</button>-->
     <!--<h3>{{thumbnail.myText}}</h3>-->
     <div>
-        <app-events *ngFor="let event of events" #thumbnail [eventOb] = "event" (eventClick)="handleParentClick($event)"></app-events>
+        <app-events *ngFor="let event of eventService.getEvents()" [eventOb] = "event"></app-events>
         <!--<tr *ngFor="let event of events"><td>{{event.name}}</td></tr>-->
     </div>
     `
@@ -14,18 +14,7 @@ import {Component, OnInit} from '@angular/core'
 
 export class EventListComponent {
     
-    private events;
-
-    ngOnInit() {
-        this.events = [{
-            name : 'Lakhwinder\'s Birthday',
-            date : '11/13/1986'
-        },
-        {
-            name : 'Rajwinder\'s Birthday',
-            date : '05/21/1990'
-        }]
-    }
+    constructor(private eventService: EventService) {}
 
     handleParentClick(event:any) {
         console.log('handleParentClick - ' + event);

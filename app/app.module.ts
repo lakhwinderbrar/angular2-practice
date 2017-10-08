@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import {EventService} from './events/event.service'
+
 import { AppComponent } from './app.component';
 import { EventsAppComponent } from './events/events.component';
 import {EventListComponent} from './events/event-list.component';
@@ -22,7 +24,7 @@ import {appRoutes} from './routes'
   imports: [
     BrowserModule, RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [EventService],
   bootstrap: [AppComponent],
   exports: [RouterModule]
 })

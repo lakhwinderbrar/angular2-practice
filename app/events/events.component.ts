@@ -10,8 +10,8 @@ import { EventEmitter } from '@angular/core'
     <hr/>
     <div>Name: {{eventOb.name}}</div>
     <div>Date(Event): {{eventOb.date}}</div>
-    <button (click)="logFoo(eventOb)">Edit</button>
-    <!--<button (click)="handleClick()">Click me child!!</button>-->
+    <button [routerLink] = "['/events',eventOb.id]">View</button>
+    <button [routerLink] = "['/events/edit',eventOb.id]">Edit</button>
   </div>
   `,
   //styleUrls: ['./events.component.css'],
