@@ -1,6 +1,7 @@
 import {Component} from '@angular/core'
 import {ActivatedRoute} from '@angular/router'
 
+
 @Component ({
     template : `
         <h4>View component {{this.getParam('id')}} </h4>

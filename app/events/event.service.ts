@@ -6,6 +6,24 @@ export class EventService {
     getEvents() {
        return EVENTS;
     }
+
+    getEvent(id:number):any {
+        
+        let result =  EVENTS.filter(function(node) {
+            return node.id==id;
+        });
+        console.log("ES : getEvent : " + id + ' result: '+ JSON.stringify(result));
+        return result;
+    }
+
+    updateEvent(id:number, name:string, date:string) {
+        let event = this.getEvent(id)
+        event.name = name
+        event.date = date
+        console.log('Event updated : id : '+ id + ', event : ' + JSON.stringify(event))
+        EVENTS[id]=event
+        
+    }
 }
 
 const EVENTS = [{

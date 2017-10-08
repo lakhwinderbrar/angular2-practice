@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import {ReactiveFormsModule} from '@angular/forms'
 
 import {EventService} from './events/event.service'
 
 import { AppComponent } from './app.component';
 import { EventsAppComponent } from './events/events.component';
 import {EventListComponent} from './events/event-list.component';
-/* import {EventEditComponent} from './events/edit-event.component'; */
+import {EditEventComponent} from './events/edit-event.component'; 
 import {ViewEventComponent} from './events/view-event.component'
 import {appRoutes} from './routes'
 
@@ -18,11 +19,11 @@ import {appRoutes} from './routes'
     AppComponent,
     EventsAppComponent,
     EventListComponent ,
-    ViewEventComponent
-    /* ,EventEditComponent  */
+    ViewEventComponent,
+    EditEventComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(appRoutes)
+    BrowserModule, ReactiveFormsModule, RouterModule.forRoot(appRoutes)
   ],
   providers: [EventService],
   bootstrap: [AppComponent],
