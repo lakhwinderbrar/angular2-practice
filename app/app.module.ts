@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { EventsAppComponent } from './events/events.component';
 import {EventListComponent} from './events/event-list.component';
 /* import {EventEditComponent} from './events/edit-event.component'; */
+import {ViewEventComponent} from './events/view-event.component'
 import {appRoutes} from './routes'
 
 
@@ -14,8 +15,9 @@ import {appRoutes} from './routes'
   declarations: [
     AppComponent,
     EventsAppComponent,
-    EventListComponent/* ,
-    EventEditComponent */
+    EventListComponent ,
+    ViewEventComponent
+    /* ,EventEditComponent  */
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(appRoutes)
