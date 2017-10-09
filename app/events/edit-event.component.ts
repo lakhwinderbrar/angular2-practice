@@ -5,16 +5,15 @@ import {FormGroup, FormControl, Validators} from '@angular/forms'
 
 @Component ({
     template : `
-        <h3>Edit Component ({{event.name}}/{{event.date}})</h3>
-        <form [formGroup]="eventForm" (ngSubmit)="saveEvent(eventForm.value)" novalidate>
-            <div class="form-group" [ngClass]="{'error': name?.invalid && name?.touched}">
+        <h3>Edit Component {{event.name}}</h3>
+        <form #newEventForm="ngForm" (ngSubmit)="saveEvent(eventForm.value)" novalidate>
+            <div class="form-group">
             <label for="event-name">Event Name:</label>
-            <input formControlName="name" id="event-name" type="text"/>
-            <em *ngIf="name?.invalid && name?.touched">Required</em>
+            <input [(ngModel)]="event.name" name="name" id="name" type="text"/>
             </div>
             <div class="form-group">
             <label for="date">Date: </label>
-            <input formControlName="date" id="date" type="text"/>
+            <input [(ngModel)]="event.date" name="date" id="date" type="text"/>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
             <button type="button" class="btn btn-default" (click)="cancel(eventForm)">Cancel</button>
@@ -24,11 +23,11 @@ import {FormGroup, FormControl, Validators} from '@angular/forms'
 })
 
 export class EditEventComponent implements OnInit {
-
-    private event:any;
-    private name:FormControl;
+    text:string = "my text"
+    event:any;
+    /*private name:FormControl;
     private date:FormControl;
-    eventForm:FormGroup
+    eventForm:FormGroup*/
     constructor(private eventService:EventService, private route:ActivatedRoute, private router:Router) {}
     
     getParam(paramId:string) {
@@ -37,12 +36,12 @@ export class EditEventComponent implements OnInit {
 
     ngOnInit() {
         this.event = this.eventService.getEvent(+this.getParam('id'))[0];
-        this.name = new FormControl(this.event.name, [Validators.required, Validators.minLength(2)])
+        /* this.name = new FormControl(this.event.name, [Validators.required, Validators.minLength(2)])
         this.date = new FormControl(this.event.date)
         this.eventForm = new FormGroup({
             name: this.name,
             date: this.date
-        })
+        }) */
 
     }
 

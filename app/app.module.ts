@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule, FormsModule} from '@angular/forms'
 
 import {EventService} from './events/event.service'
 
@@ -23,7 +23,7 @@ import {appRoutes} from './routes'
     EditEventComponent
   ],
   imports: [
-    BrowserModule, ReactiveFormsModule, RouterModule.forRoot(appRoutes)
+    BrowserModule, ReactiveFormsModule, RouterModule.forRoot(appRoutes), FormsModule
   ],
   providers: [EventService],
   bootstrap: [AppComponent],
